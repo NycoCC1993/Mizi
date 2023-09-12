@@ -22,7 +22,7 @@ new program 'Mizi_Two' {
 		while ( countInt != 0 ) { countInt-- } ~With last/only operation in the bracket, the semicolon is not necessary
 	}
 	
-	new operation 'RetsInt' ( inputs: null; returns integer ) { ~operation = java method
+	new operation 'RetsInt' ( inputs:null; returns integer ) { ~operation = java method
 		{ RETURN 5 };
 	}
 	
@@ -30,7 +30,7 @@ new program 'Mizi_Two' {
 		{ RETURN ( 2 * ( oneInput + twoInput ) ) }; ~Each mathematical operation must be surrounded by parenthesis
 	}
 	
-	new operation 'VoidDoNothing' (inputs: null; returns NOTHING) {
+	new operation 'VoidDoNothing' (inputs:null; returns NOTHING) {
 		null;	~Empty parenthesis is not allowed
 	}
 	
