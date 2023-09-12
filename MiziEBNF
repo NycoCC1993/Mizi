@@ -1,0 +1,13 @@
+~Mizi EBNF
+
+<stmts> ::= chars, tu sabes
+<block> ::= { <stmts> }
+<funct> ::= ( <stmtFunct> )
+<stmtFunct> ::= <int> <op> <int> | <declareInput>; <declareReturn> | <complexOp> <operants>
+<op> ::= + | - | / | * | % | ^
+<complexOp> ::= COUNT | etc...
+<operants> ::= <int> | <range>
+<range> ::= <int>-><int>
+<declareInput> ::= inputs: <stmts> | inputs: null
+<declareReturn> ::= returns <type>
+<type> ::= integer | string | character | boolean | float

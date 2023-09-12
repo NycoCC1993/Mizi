@@ -1,0 +1,57 @@
+~MIZI
+
+new program 'MiziTest' {
+	new executor 'Main' {
+		console.output("Hello, world!"); ~a single line need not be bracketed but if there are multiple lines they should be
+	}
+}
+
+new program 'Mizi_Two' {
+	new executor "Main" {
+		{ integer -unsigned -fixedval 'testInt' = 5 }; 
+~"fixedval" is to replace "const" or "final"
+		{ integer 'countInt' = 5 };
+		{ string 'holdstring' = "Holding!" }; 
+~identifiers should be surrounded with 'single quotes'
+		
+		for ( COUNT 0->holdstring.charCount ) { 
+~"COUNT" indicates iterating through loop from zero to the length of "holdstring"
+			{console.output(holdstring.charCollect(current))}; ~collect the current character from the iteration and write it to the console
+		}
+		
+		while (countInt != 0) { countInt-- } 
+~With last/only operation in the bracket, the semicolon is not necessary
+	}
+	
+	new operation 'RetsInt' (inputs:null; returns integer) { ~operation = java method
+		{ RETURN 5 };
+	}
+	
+	new operation 'SumX2' (inputs: [integer oneInput], [integer twoInput]; returns integer) {
+		{ RETURN ( 2 * ( oneInput + twoInput ) ) }; ~Each mathematical operation must be surrounded by parenthesis
+	}
+	
+	new operation 'VoidDoNothing' (inputs:null; returns NOTHING) {
+		null;	
+~Empty parenthesis is not allowed
+	}
+	
+	new executor 'Secondary' {
+		VoidDoNothing();
+	}
+}
+
+~Mizi should be a new programming language, to define the comment with the tilde character
+~The tilde must be the very first character on the line, no whitespace
+ 
+~execution @commandline
+
+mizi MiziTest.mz(MiziTest.Main)
+
+mizi MiziTest.mz(Mizi_Two.Main)
+
+mizi MiziTest.mz(Mizi_Two.Secondary)
+
+~Only "executor" can be run this way - by default the executor called "Main" - if it does not exist, run the first executor - otherwise, error
+
+~MIZI = MIniature Zealous Interpretation
