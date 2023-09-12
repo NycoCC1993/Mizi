@@ -16,14 +16,13 @@ new program 'Mizi_Two' {
 		
 		for ( COUNT 0->holdstring.charCount ) { 
 ~"COUNT" indicates iterating through loop from zero to the length of "holdstring"
-			{console.output(holdstring.charCollect(current))}; ~collect the current character from the iteration and write it to the console
+			{ console.output( holdstring.charCollect( current ) ) }; ~collect the current character from the iteration and write it to the console
 		}
 		
-		while (countInt != 0) { countInt-- } 
-~With last/only operation in the bracket, the semicolon is not necessary
+		while ( countInt != 0 ) { countInt-- } ~With last/only operation in the bracket, the semicolon is not necessary
 	}
 	
-	new operation 'RetsInt' (inputs:null; returns integer) { ~operation = java method
+	new operation 'RetsInt' ( inputs:null; returns integer ) { ~operation = java method
 		{ RETURN 5 };
 	}
 	
@@ -32,8 +31,7 @@ new program 'Mizi_Two' {
 	}
 	
 	new operation 'VoidDoNothing' (inputs:null; returns NOTHING) {
-		null;	
-~Empty parenthesis is not allowed
+		null;	~Empty parenthesis is not allowed
 	}
 	
 	new executor 'Secondary' {
@@ -42,7 +40,7 @@ new program 'Mizi_Two' {
 }
 
 ~Mizi should be a new programming language, to define the comment with the tilde character
-~The tilde must be the very first character on the line, no whitespace
+~The tilde should optimally be the very first character on the line, no whitespace
  
 ~execution @commandline
 
